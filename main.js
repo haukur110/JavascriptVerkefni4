@@ -54,18 +54,18 @@ class Ball extends Shape {
     };
 
     collisionDetect() {
-        for (let i = 0; i < boxes.length; i++) { //Check if a Ball collides with a box
+        for (let i = 0; i < boxes.length; i++) { //Checka ef bolti snertir box
             const dx = this.x - boxes[i].x;
             const dy = this.y - boxes[i].y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < this.size + boxes[i].size) { 
-                if (this.size < (boxes[i].size/2)) { //Ef boxið er stærra en hringurinn, freeze ball
+                if (this.size < (boxes[i].size/2)) { //Ef boxið er stærra en hringurinn, frjósa boltan
                     this.velX = 0;
                     this.velY = 0;
                 }
 
-                else if (this.size > (boxes[i].size/2)){ //Ef hringurinn er stærri en boxið, freeze box
+                else if (this.size > (boxes[i].size/2)){ //Ef hringurinn er stærri en boxið, frjósa boxið
                     boxes[i].velX = 0;
                     boxes[i].velY = 0;
                 }
@@ -76,14 +76,14 @@ class Ball extends Shape {
             }
         }
 
-        for (let i = 0; i < balls.length; i++) { //Check if a Ball collides with a ball
+        for (let i = 0; i < balls.length; i++) { //Checka ef bolti snertir annan bolta
             if (!(this === balls[i])) {
                 const dx = this.x - balls[i].x;
                 const dy = this.y - balls[i].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < this.size + (balls[i].size)) {
-                    if (balls[i].velX === 0 || balls[i].velY === 0) { //If ball collides with a frozen ball, unfreeze.
+                    if (balls[i].velX === 0 || balls[i].velY === 0) { //Ef bolti snertir frosinn bolta, afþýða boltan.
                         balls[i].velX = this.velX;
                         balls[i].velY = this.velY;
                     }
