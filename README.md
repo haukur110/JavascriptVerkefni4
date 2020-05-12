@@ -4,4 +4,6 @@
 Ef að sama shape típan collide-ar með hvort öðru og eitt þeirra er frozen þá mun það unfreeze-a.
 Boxin ferðat aðeins hægar en hringirnir.
 
-Ég notaði "Shape" class í staðinn fyrir prototype og inheretence class fyirir "Balls" og "Boxes" 
+Ég notaði class í staðinn fyrir prototype, svo notaði ég inheritance class fyirir "Balls" og "Boxes".
+
+Ég er með kóða fyrir alert message sem á að koma þegar annaðhvort þeirra vinnur en ég náði ekki að láta hann virka.
